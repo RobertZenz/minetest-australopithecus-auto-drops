@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>ldoc</h1>
+
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Fields">Fields</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><strong>autodrops</strong></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>autodrops</code></h1>
+<p>Autodrops is a system which enables that drops from nodes become items
+ which are dropped on the ground, instead of being send directly to
+ the player inventory.</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#drop">drop (position, stacks)</a></td>
+	<td class="summary">Drops the given ItemStacks at the given position, based on the settings.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#drop_random">drop_random (position, stack)</a></td>
+	<td class="summary">Drops the given stack from the given position by splitting it into random
+ amounts.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#drop_single">drop_single (position, stack)</a></td>
+	<td class="summary">Drops the given stack from the given position by splitting it into single
+ items.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#drop_stack">drop_stack (position, stack)</a></td>
+	<td class="summary">Drops the given stack from the given position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#node_drops_handler">node_drops_handler (position, drops, player, handled)</a></td>
+	<td class="summary">The handler which is registered for handling the node drops.</td>
+	</tr>
+</table>
+<h2><a href="#Fields">Fields</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#split">split</a></td>
+	<td class="summary">The split method that is used.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2><a name="Functions"></a>Functions</h2>
+    <dl class="function">
+    <dt>
+    <a name = "drop"></a>
+    <strong>drop (position, stacks)</strong>
+    </dt>
+    <dd>
+    Drops the given ItemStacks at the given position, based on the settings.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+         The position at which to drop the items.
+        </li>
+        <li><span class="parameter">stacks</span>
+         The array of ItemStacks to drop.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "drop_random"></a>
+    <strong>drop_random (position, stack)</strong>
+    </dt>
+    <dd>
+    Drops the given stack from the given position by splitting it into random
+ amounts.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+         The position at which the items should spawn.
+        </li>
+        <li><span class="parameter">stack</span>
+         The ItemStack to drop.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "drop_single"></a>
+    <strong>drop_single (position, stack)</strong>
+    </dt>
+    <dd>
+    Drops the given stack from the given position by splitting it into single
+ items.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+         The position at which the items should spawn.
+        </li>
+        <li><span class="parameter">stack</span>
+         The ItemStack to drop.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "drop_stack"></a>
+    <strong>drop_stack (position, stack)</strong>
+    </dt>
+    <dd>
+    Drops the given stack from the given position.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+         The position at which the items should spawn.
+        </li>
+        <li><span class="parameter">stack</span>
+         The ItemStack to drop.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "node_drops_handler"></a>
+    <strong>node_drops_handler (position, drops, player, handled)</strong>
+    </dt>
+    <dd>
+    The handler which is registered for handling the node drops.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+         The position at which the drop occured.
+        </li>
+        <li><span class="parameter">drops</span>
+         The array of ItemStacks which are dropped.
+        </li>
+        <li><span class="parameter">player</span>
+         The player which originated the event.
+        </li>
+        <li><span class="parameter">handled</span>
+         If the event has already been handled or not.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        true, because the event has been handled by this function.
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2><a name="Fields"></a>Fields</h2>
+    <dl class="function">
+    <dt>
+    <a name = "split"></a>
+    <strong>split</strong>
+    </dt>
+    <dd>
+    The split method that is used.  Possible values are "stack", "random"
+ and "single", defaults to "single". "stack" means that the full stack
+ as provided is dropped, "random" splits the provided stack randomly and
+ "single" splits the provided stack into individual items.
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.2</a></i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
