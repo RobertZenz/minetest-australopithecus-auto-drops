@@ -37,7 +37,8 @@ autodrops = {
 }
 
 
--- Activates the autodrops system.
+-- Activates the autodrops system, if it has not been disabled in
+-- configuration by setting "autodrops_active" to false.
 function autodrops.activate()
 	if settings.get_bool("autodrops_active", true) then
 		minetestex.register_on_nodedrops(autodrops.node_drops_handler)
