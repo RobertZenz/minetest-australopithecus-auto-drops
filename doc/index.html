@@ -53,6 +53,10 @@
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
+	<td class="name" nowrap><a href="#blop">blop (position, item)</a></td>
+	<td class="summary">Blops the given item into existence.</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#drop">drop (position, stacks)</a></td>
 	<td class="summary">Drops the given ItemStacks at the given position, based on the settings.</td>
 	</tr>
@@ -81,6 +85,10 @@
 	<td class="name" nowrap><a href="#split">split</a></td>
 	<td class="summary">The split method that is used.</td>
 	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#velocity">velocity</a></td>
+	<td class="summary">The maximum velocity for new spawned items, defaults to 4, 3, 4.</td>
+	</tr>
 </table>
 
 <br/>
@@ -89,6 +97,29 @@
 
     <h2><a name="Functions"></a>Functions</h2>
     <dl class="function">
+    <dt>
+    <a name = "blop"></a>
+    <strong>blop (position, item)</strong>
+    </dt>
+    <dd>
+    Blops the given item into existence.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">position</span>
+         The position at which the item should be spawned.
+        </li>
+        <li><span class="parameter">item</span>
+         The item to spawn.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
     <dt>
     <a name = "drop"></a>
     <strong>drop (position, stacks)</strong>
@@ -229,6 +260,20 @@
  and "single", defaults to "single". "stack" means that the full stack
  as provided is dropped, "random" splits the provided stack randomly and
  "single" splits the provided stack into individual items.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "velocity"></a>
+    <strong>velocity</strong>
+    </dt>
+    <dd>
+    The maximum velocity for new spawned items, defaults to 4, 3, 4.
 
 
 
