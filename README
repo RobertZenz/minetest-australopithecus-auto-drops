@@ -24,4 +24,7 @@ The system can be configured by adding settings to the `minetest.conf`:
     #  single: The dropped stacks are split into every single item.
     #  stack: The dropped stacks are dropped as they are.
     autodrops_split = single
+    
+    # The maximum velocity of newly dropped items, defaults to "4, 3, 4".
+    autodrops_velocity = 4, 3, 4
 

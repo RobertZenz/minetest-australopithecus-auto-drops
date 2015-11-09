@@ -33,7 +33,10 @@ autodrops = {
 	-- and "single", defaults to "single". "stack" means that the full stack
 	-- as provided is dropped, "random" splits the provided stack randomly and
 	-- "single" splits the provided stack into individual items.
-	split = settings.get_string("autodrops_split", "single")
+	split = settings.get_string("autodrops_split", "single"),
+	
+	--- The maximum velocity for new spawned items, defaults to 4, 3, 4.
+	velocity = settings.get_pos3d("autodrops_velocity", { x = 4, y = 3, z = 4 })
 }
 
 
@@ -43,6 +46,19 @@ function autodrops.activate()
 	if settings.get_bool("autodrops_active", true) then
 		minetestex.register_on_nodedrops(autodrops.node_drops_handler)
 	end
+end
+
+--- Blops the given item into existence.
+--
+-- @param position The position at which the item should be spawned.
+-- @param item The item to spawn.
+function autodrops.blop(position, item)
+	itemutil.blop(
+		position,
+		item,
+		autodrops.velocity.x,
+		autodrops.velocity.y,
+		autodrops.velocity.z)
 end
 
 --- Drops the given ItemStacks at the given position, based on the settings.
@@ -74,7 +90,7 @@ function autodrops.drop_random(position, stack)
 		local count = random.next_int(1, remaining + 1)
 		local item_string = name .. " " .. tostring(count)
 		
-		itemutil.blop(position, item_string)
+		autodrops.blop(position, item_string)
 		
 		remaining = remaining - count;
 	end
@@ -89,7 +105,7 @@ function autodrops.drop_single(position, stack)
 	local name = stack:get_name()
 	
 	for counter = 1, stack:get_count(), 1 do
-		itemutil.blop(position, name, 4, 3, 4)
+		autodrops.blop(position, name)
 	end
 end
 
@@ -98,7 +114,7 @@ end
 -- @param position The position at which the items should spawn.
 -- @param stack The ItemStack to drop.
 function autodrops.drop_stack(position, stack)
-	itemutil.blop(position, stack:to_string())
+	autodrops.blop(position, stack:to_string())
 end
 
 --- The handler which is registered for handling the node drops.
