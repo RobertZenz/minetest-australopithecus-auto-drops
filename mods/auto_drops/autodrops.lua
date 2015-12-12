@@ -35,8 +35,8 @@ autodrops = {
 	-- "single" splits the provided stack into individual items.
 	split = settings.get_string("autodrops_split", "single"),
 	
-	--- The maximum velocity for new spawned items, defaults to 4, 3, 4.
-	velocity = settings.get_pos3d("autodrops_velocity", { x = 4, y = 3, z = 4 })
+	--- The maximum velocity for new spawned items, defaults to 2, 4, 2.
+	velocity = settings.get_pos3d("autodrops_velocity", { x = 2, y = 4, z = 2 })
 }
 
 
