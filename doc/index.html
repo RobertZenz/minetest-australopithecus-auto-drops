@@ -53,26 +53,8 @@
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
-	<td class="name" nowrap><a href="#blop">blop (position, item)</a></td>
-	<td class="summary">Blops the given item into existence.</td>
-	</tr>
-	<tr>
 	<td class="name" nowrap><a href="#drop">drop (position, stacks)</a></td>
 	<td class="summary">Drops the given ItemStacks at the given position, based on the settings.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#drop_random">drop_random (position, stack)</a></td>
-	<td class="summary">Drops the given stack from the given position by splitting it into random
- amounts.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#drop_single">drop_single (position, stack)</a></td>
-	<td class="summary">Drops the given stack from the given position by splitting it into single
- items.</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#drop_stack">drop_stack (position, stack)</a></td>
-	<td class="summary">Drops the given stack from the given position.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#node_drops_handler">node_drops_handler (position, drops, player, handled)</a></td>
@@ -98,29 +80,6 @@
     <h2><a name="Functions"></a>Functions</h2>
     <dl class="function">
     <dt>
-    <a name = "blop"></a>
-    <strong>blop (position, item)</strong>
-    </dt>
-    <dd>
-    Blops the given item into existence.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position</span>
-         The position at which the item should be spawned.
-        </li>
-        <li><span class="parameter">item</span>
-         The item to spawn.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
     <a name = "drop"></a>
     <strong>drop (position, stacks)</strong>
     </dt>
@@ -135,77 +94,6 @@
         </li>
         <li><span class="parameter">stacks</span>
          The array of ItemStacks to drop.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "drop_random"></a>
-    <strong>drop_random (position, stack)</strong>
-    </dt>
-    <dd>
-    Drops the given stack from the given position by splitting it into random
- amounts.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position</span>
-         The position at which the items should spawn.
-        </li>
-        <li><span class="parameter">stack</span>
-         The ItemStack to drop.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "drop_single"></a>
-    <strong>drop_single (position, stack)</strong>
-    </dt>
-    <dd>
-    Drops the given stack from the given position by splitting it into single
- items.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position</span>
-         The position at which the items should spawn.
-        </li>
-        <li><span class="parameter">stack</span>
-         The ItemStack to drop.
-        </li>
-    </ul>
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "drop_stack"></a>
-    <strong>drop_stack (position, stack)</strong>
-    </dt>
-    <dd>
-    Drops the given stack from the given position.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">position</span>
-         The position at which the items should spawn.
-        </li>
-        <li><span class="parameter">stack</span>
-         The ItemStack to drop.
         </li>
     </ul>
 

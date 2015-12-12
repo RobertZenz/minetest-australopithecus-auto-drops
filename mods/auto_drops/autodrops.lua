@@ -48,73 +48,18 @@ function autodrops.activate()
 	end
 end
 
---- Blops the given item into existence.
---
--- @param position The position at which the item should be spawned.
--- @param item The item to spawn.
-function autodrops.blop(position, item)
-	itemutil.blop(
-		position,
-		item,
-		autodrops.velocity.x,
-		autodrops.velocity.y,
-		autodrops.velocity.z)
-end
-
 --- Drops the given ItemStacks at the given position, based on the settings.
 --
 -- @param position The position at which to drop the items.
 -- @param stacks The array of ItemStacks to drop.
 function autodrops.drop(position, stacks)
-	for index, stack in ipairs(stacks) do
-		if autodrops.split == "random" then
-			autodrops.drop_random(position, stack)
-		elseif autodrops.split == "single" then
-			autodrops.drop_single(position, stack)
-		elseif autodrops.split == "stack" then
-			autodrops.drop_stack(position, stack)
-		end
-	end
-end
-
---- Drops the given stack from the given position by splitting it into random
--- amounts.
---
--- @param position The position at which the items should spawn.
--- @param stack The ItemStack to drop.
-function autodrops.drop_random(position, stack)
-	local name = stack:get_name()
-	local remaining = stack:get_count()
-	
-	while remaining > 0 do
-		local count = random.next_int(1, remaining + 1)
-		local item_string = name .. " " .. tostring(count)
-		
-		autodrops.blop(position, item_string)
-		
-		remaining = remaining - count;
-	end
-end
-
---- Drops the given stack from the given position by splitting it into single
--- items.
---
--- @param position The position at which the items should spawn.
--- @param stack The ItemStack to drop.
-function autodrops.drop_single(position, stack)
-	local name = stack:get_name()
-	
-	for counter = 1, stack:get_count(), 1 do
-		autodrops.blop(position, name)
-	end
-end
-
---- Drops the given stack from the given position.
---
--- @param position The position at which the items should spawn.
--- @param stack The ItemStack to drop.
-function autodrops.drop_stack(position, stack)
-	autodrops.blop(position, stack:to_string())
+	itemutil.blop(
+		position,
+		stacks:to_table(),
+		autodrops.velocity.x,
+		autodrops.velocity.y,
+		autodrops.velocity.z,
+		autodrops.split)
 end
 
 --- The handler which is registered for handling the node drops.
@@ -126,6 +71,7 @@ end
 -- @return true, because the event has been handled by this function.
 function autodrops.node_drops_handler(position, drops, player, handled)
 	autodrops.drop(position, drops)
+	
 	return true
 end
 
