@@ -4,6 +4,14 @@ minetest-australopithecus-auto-drops
 A system which drops all drops from a dug node as items.
 
 
+Features
+========
+
+ * Items are "dropped" from a dug node with a random velocity in a random
+   direction.
+ * The mod is completely configurable from the configuration file.
+
+
 Usage
 =====
 
