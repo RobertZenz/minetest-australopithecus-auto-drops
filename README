@@ -5,7 +5,7 @@ A system which drops all drops from a dug node as items.
 
 
 Features
-========
+--------
 
  * Items are "dropped" from a dug node with a random velocity in a random
    direction.
@@ -13,13 +13,13 @@ Features
 
 
 Usage
-=====
+-----
 
 The system activates itself, you just need to add the mod to the subgame.
 
 
 Configuration
-=============
+-------------
 
 The system can be configured by adding settings to the `minetest.conf`:
 
