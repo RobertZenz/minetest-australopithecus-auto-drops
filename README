@@ -60,6 +60,10 @@ ItemStacks.
         -- Add items directly to the inventory of the player directly.
     end
 
+
+Force activation
+----------------
+
 You can also force activate the system, even if it has been disabled in
 the configuration, by invoking `autodrops.activate_internal`.
 
