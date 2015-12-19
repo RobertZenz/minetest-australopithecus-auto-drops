@@ -29,6 +29,12 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -- which are dropped on the ground, instead of being send directly to
 -- the player inventory.
 autodrops = {
+	--- If the system should be automatically activated.
+	activate = settings.get_bool("autodrops_activate"),
+	
+	--- If the system is currently active/has been activated.
+	active = false,
+	
 	--- The split method that is used. Possible values are "stack", "random"
 	-- and "single", defaults to "single". "stack" means that the full stack
 	-- as provided is dropped, "random" splits the provided stack randomly and
@@ -40,11 +46,21 @@ autodrops = {
 }
 
 
--- Activates the autodrops system, if it has not been disabled in
--- configuration by setting "autodrops_active" to false.
+--- Activates the autodrops system, if it has not been disabled in
+-- configuration by setting "autodrops_activate" to false.
 function autodrops.activate()
-	if settings.get_bool("autodrops_active", true) then
+	if autodrops.activate then
+		autodrops.activate_internal()
+	end
+end
+
+--- Activates the autodrops system without checking the configuration. Does
+-- nothing on multiple calls.
+function autodrops.activate_internal()
+	if not autodrops.active then
 		minetestex.register_on_nodedrops(autodrops.node_drops_handler)
+		
+		autodrops.active = true
 	end
 end
 

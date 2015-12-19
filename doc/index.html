@@ -53,6 +53,15 @@
 <h2><a href="#Functions">Functions</a></h2>
 <table class="function_list">
 	<tr>
+	<td class="name" nowrap><a href="#activate">activate ()</a></td>
+	<td class="summary">Activates the autodrops system, if it has not been disabled in
+ configuration by setting "autodrops_activate" to false.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#activate_internal">activate_internal ()</a></td>
+	<td class="summary">Activates the autodrops system without checking the configuration.</td>
+	</tr>
+	<tr>
 	<td class="name" nowrap><a href="#drop">drop (position, stacks)</a></td>
 	<td class="summary">Drops the given ItemStacks at the given position, based on the settings.</td>
 	</tr>
@@ -63,6 +72,14 @@
 </table>
 <h2><a href="#Fields">Fields</a></h2>
 <table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#activate">activate</a></td>
+	<td class="summary">If the system should be automatically activated.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#active">active</a></td>
+	<td class="summary">If the system is currently active/has been activated.</td>
+	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#split">split</a></td>
 	<td class="summary">The split method that is used.</td>
@@ -79,6 +96,36 @@
 
     <h2><a name="Functions"></a>Functions</h2>
     <dl class="function">
+    <dt>
+    <a name = "activate"></a>
+    <strong>activate ()</strong>
+    </dt>
+    <dd>
+    Activates the autodrops system, if it has not been disabled in
+ configuration by setting "autodrops_activate" to false.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "activate_internal"></a>
+    <strong>activate_internal ()</strong>
+    </dt>
+    <dd>
+    Activates the autodrops system without checking the configuration.  Does
+ nothing on multiple calls.
+
+
+
+
+
+
+
+</dd>
     <dt>
     <a name = "drop"></a>
     <strong>drop (position, stacks)</strong>
@@ -139,6 +186,34 @@
 </dl>
     <h2><a name="Fields"></a>Fields</h2>
     <dl class="function">
+    <dt>
+    <a name = "activate"></a>
+    <strong>activate</strong>
+    </dt>
+    <dd>
+    If the system should be automatically activated.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "active"></a>
+    <strong>active</strong>
+    </dt>
+    <dd>
+    If the system is currently active/has been activated.
+
+
+
+
+
+
+
+</dd>
     <dt>
     <a name = "split"></a>
     <strong>split</strong>
