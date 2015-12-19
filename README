@@ -36,3 +36,30 @@ The system can be configured by adding settings to the `minetest.conf`:
     # The maximum velocity of newly dropped items, defaults to "2, 4, 2".
     autodrops_velocity = 2, 4, 2
 
+
+Drop additional items
+---------------------
+
+If you want to drop additional items, in some way, you can easily do this by
+invoking `autodrops.drop`, which does accept a position and a List of
+ItemStacks.
+
+    -- Invoked from somewhere.
+    
+    -- Check if the autodrops object is available, that allows to define it
+    -- as optional dependency.
+    -- Check if the autodrops system is active, that is needed to make because
+    -- the user can always deactivate it from the configuration.
+    if autodrops ~= nil and autodrops.active then
+        -- Now drop your stacks.
+        -- position is a position, a table with x, y, z values.
+        -- stacks is a List if ItemStacks or item strings (or both). The List
+        -- is a table extension available in the utils mod.
+        autodrops.drop(position, stacks)
+    else
+        -- Add items directly to the inventory of the player directly.
+    end
+
+You can also force activate the system, even if it has been disabled in
+the configuration, by invoking `autodrops.activate_internal`.
+
