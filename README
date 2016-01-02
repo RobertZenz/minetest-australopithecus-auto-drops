@@ -24,7 +24,7 @@ Configuration
 The system can be configured by adding settings to the `minetest.conf`:
 
     # If the system should be activated, defaults to true.
-    autodrops_activate = true.
+    autodrops_activate = true
     
     # If the stacks that are split in some way, defaults to single.
     # Possible values are:
