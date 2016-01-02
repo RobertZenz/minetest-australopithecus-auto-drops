@@ -30,7 +30,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -- the player inventory.
 autodrops = {
 	--- If the system should be automatically activated.
-	activate_automatically = settings.get_bool("autodrops_activate"),
+	activate_automatically = settings.get_bool("autodrops_activate", true),
 	
 	--- If the system is currently active/has been activated.
 	active = false,
