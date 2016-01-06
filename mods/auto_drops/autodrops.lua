@@ -67,7 +67,7 @@ end
 --- Drops the given ItemStacks at the given position, based on the settings.
 --
 -- @param position The position at which to drop the items.
--- @param stacks The array of ItemStacks to drop.
+-- @param stacks The List of ItemStacks to drop.
 function autodrops.drop(position, stacks)
 	itemutil.blop(
 		position,
