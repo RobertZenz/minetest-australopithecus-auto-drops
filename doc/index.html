@@ -62,7 +62,7 @@
 	<td class="summary">Activates the autodrops system without checking the configuration.</td>
 	</tr>
 	<tr>
-	<td class="name" nowrap><a href="#drop">drop (position, stacks)</a></td>
+	<td class="name" nowrap><a href="#drop">drop (position, player, stacks)</a></td>
 	<td class="summary">Drops the given ItemStacks at the given position, based on the settings.</td>
 	</tr>
 	<tr>
@@ -79,6 +79,10 @@
 	<tr>
 	<td class="name" nowrap><a href="#active">active</a></td>
 	<td class="summary">If the system is currently active/has been activated.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#set_dropped_by">set_dropped_by</a></td>
+	<td class="summary">If the dropped_by field should be set to the player name.</td>
 	</tr>
 	<tr>
 	<td class="name" nowrap><a href="#split">split</a></td>
@@ -128,7 +132,7 @@
 </dd>
     <dt>
     <a name = "drop"></a>
-    <strong>drop (position, stacks)</strong>
+    <strong>drop (position, player, stacks)</strong>
     </dt>
     <dd>
     Drops the given ItemStacks at the given position, based on the settings.
@@ -138,6 +142,9 @@
     <ul>
         <li><span class="parameter">position</span>
          The position at which to drop the items.
+        </li>
+        <li><span class="parameter">player</span>
+         The Player object that caused the dropping.
         </li>
         <li><span class="parameter">stacks</span>
          The List of ItemStacks to drop.
@@ -206,6 +213,20 @@
     </dt>
     <dd>
     If the system is currently active/has been activated.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "set_dropped_by"></a>
+    <strong>set_dropped_by</strong>
+    </dt>
+    <dd>
+    If the dropped_by field should be set to the player name.
 
 
 

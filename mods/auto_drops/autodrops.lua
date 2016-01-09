@@ -35,6 +35,9 @@ autodrops = {
 	--- If the system is currently active/has been activated.
 	active = false,
 	
+	--- If the dropped_by field should be set to the player name.
+	set_dropped_by = settings.get_bool("autodrops_set_dropped_by", true),
+	
 	--- The split method that is used. Possible values are "stack", "random"
 	-- and "single", defaults to "single". "stack" means that the full stack
 	-- as provided is dropped, "random" splits the provided stack randomly and
@@ -67,15 +70,22 @@ end
 --- Drops the given ItemStacks at the given position, based on the settings.
 --
 -- @param position The position at which to drop the items.
+-- @param player The Player object that caused the dropping.
 -- @param stacks The List of ItemStacks to drop.
-function autodrops.drop(position, stacks)
-	itemutil.blop(
+function autodrops.drop(position, player, stacks)
+	local items = itemutil.blop(
 		position,
 		stacks:to_table(),
 		autodrops.velocity.x,
 		autodrops.velocity.y,
 		autodrops.velocity.z,
 		autodrops.split)
+	
+	if autodrops.set_dropped_by then
+		items:foreach(function(item, index)
+			item:get_luaentity().dropped_by = player:get_player_name()
+		end)
+	end
 end
 
 --- The handler which is registered for handling the node drops.
@@ -86,7 +96,7 @@ end
 -- @param handled If the event has already been handled or not.
 -- @return true, because the event has been handled by this function.
 function autodrops.node_drops_handler(position, drops, player, handled)
-	autodrops.drop(position, drops)
+	autodrops.drop(position, player, drops)
 	
 	return true
 end
