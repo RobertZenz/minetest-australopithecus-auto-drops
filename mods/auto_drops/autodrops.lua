@@ -35,8 +35,11 @@ autodrops = {
 	--- If the system is currently active/has been activated.
 	active = false,
 	
-	--- If the dropped_by field should be set to the player name.
-	set_dropped_by = settings.get_bool("autodrops_set_dropped_by", true),
+	--- If the field should be set to disable auto-pickup.
+	autopickup_disable = settings.get_bool("autodrops_autopickup_disable", false),
+	
+	--- The timeout value to set for auto-pickup.
+	autopickup_timeout = settings.get_number("autodrops_autopickup_timeout", 1),
 	
 	--- The split method that is used. Possible values are "stack", "random"
 	-- and "single", defaults to "single". "stack" means that the full stack
@@ -81,11 +84,10 @@ function autodrops.drop(position, player, stacks)
 		autodrops.velocity.z,
 		autodrops.split)
 	
-	if autodrops.set_dropped_by then
-		items:foreach(function(item, index)
-			item:get_luaentity().dropped_by = player:get_player_name()
-		end)
-	end
+	items:foreach(function(item, index)
+		item:get_luaentity().autopickup_disable = autodrops.autopickup_disable
+		item:get_luaentity().autopickup_timeout = autodrops.autopickup_timeout
+	end)
 end
 
 --- The handler which is registered for handling the node drops.

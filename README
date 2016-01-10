@@ -26,10 +26,13 @@ The system can be configured by adding settings to the `minetest.conf`:
     # If the system should be activated, defaults to true.
     autodrops_activate = true
     
-    # If the droppedby field should be set on the new items, whih if
-    # auto-pickup is used, prevents the items from being picked up instantious,
-    # defaults to true.
-    autodrops_set_dropped_by = true
+    # If the field should be set to disable automatically pickup provided
+    # by the auto-pickup mod, defaults to false.
+    autodrops_autopickup_disable = false
+    
+    # The value for the timeout before the auto-pickup mod is allowed to pick
+    # it up, defaults to 1.
+    autodrops_autopickup_timeout = 1
     
     # If the stacks that are split in some way, defaults to single.
     # Possible values are:
